@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fueler - Petrol Calculator</title>
+        <meta name="description" content="Calculate your monthly petrol cost with Fueler, the handy and accurate petrol calculator. Save money on your trips.">
+        <meta name="keywords" content="fuel calculator, petrol calculator, trip cost calculator, fuel consumption, travel expenses, cost estimator">
+        <meta name="author" content="Fueler">
+        <meta name="robots" content="index, follow">
+    
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ezDAH4Qz7g4BKpsG5l3VPrLh7v3RSZIkB2JLiwwzC15eZDAAz6FffOzN2ZfeXfA2" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <div class="container-screen">
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="logo-placeholder">
+                        <img style="width: 100%; height: 100%" src="images/fueler-logo.png"/>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                                <!-- Add dropdown for Calculators -->
+                                <li class="dropdown">
+                                    <a href="#">Calculators</a>
+                                    <div class="dropdown-content">
+                                        <a href="#">Trip Calculator</a>
+                                        <a href="#">Monthly Calculator</a>
+                                        <!-- Add more calculator links as needed -->
+                                    </div>
+                                </li>
+                                <li><a href="#">Updates</a></li>
+                                <li id="bug-report-btn"><a href="#">Report a Bug</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Placeholder for top banner ad -->
+        <div class="ad-banner" id="topBannerAd">
+            <!-- Placeholder for Google AdSense code or other ad provider -->
+            <!-- Replace this comment with your ad code -->
+        </div>
+        <div class="container-content">
+            <main>
+                <div class="calculator-container">
+                    <h2>Petrol Calculator</h2>
+                    <p class="sub-paragrapgh">
+                        Calculate your monthly petrol cost with our handy and accurate calculator.
+                    </p>
+                    <!-- Existing calculator container -->
+                    <div id="calculator">
+                        <input type="number" id="totalDistance" step="0.1" min="0" required placeholder="Total Trip Kilometers">
+                        <input type="number" id="fuelConsumption" step="0.1" min="0" required placeholder="Fuel Consumption (km per litre)">
+                        <select id="fuelType" required onchange="updateFuelPlaceholder()">
+                            <option value="93" data-fuelprice="23.44">93 Octane - R23.44</option>
+                            <option value="95" data-fuelprice="23.90">95 Octane - R23.90</option>
+                            <option value="diesel_500ppm" data-fuelprice="24.16">Diesel 500 ppm - R24.16</option>
+                            <option value="diesel_50ppm" data-fuelprice="24.40">Diesel 50 ppm - R24.40</option>
+                        </select>
+                        <select id="locationType" required>
+                            <option value="inland">Inland</option>
+                            <option value="coastal">Coastal</option>
+                        </select>
+                        <button onclick="calculateCost()">Calculate</button>
+                        <p id="result" style="display: none;">Estimated Cost: R0.00 <span id="reset" onclick="resetForm()">Reset</span></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- Placeholder for side banner ad -->
+        <div class="ad-banner" id="sideBannerAd">
+            <!-- Placeholder for Google AdSense code or other ad provider -->
+            <!-- Replace this comment with your ad code -->
+        </div>
+        <footer>
+            <p>&copy; 2023 Fueler. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
